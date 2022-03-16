@@ -18,13 +18,13 @@ public class Main {
         System.out.print("Enter k: ");
         int k = sc.nextInt();
 
-//        int i = 0;
-//        for (Integer v : list.fillingInTheList(n)) {
-//            if (i < n) {
-//                System.out.print((i > 0 ? ", " : "") + v);
-//                i++;
-//            } else break;
-//        }
+        int i = 0;
+        for (Integer v : list.fillingInTheList(n)) {
+            if (i < n) {
+                System.out.print((i > 0 ? ", " : "") + v);
+                i++;
+            } else break;
+        }
         System.out.println();
 
         System.out.println("Result: " + list.searcher(k, list.fillingInTheList(n)));

@@ -47,26 +47,21 @@ public class SimpleLinkedList<T> implements Iterable<T> {
     public int searcher(int k, SimpleLinkedList list) throws SimpleLinkedList.SimpleLinkedListException {
         head = list.head;
         tail = list.tail;
-        SimpleLinkedListNode temp = head;
+        SimpleLinkedListNode curr = tail;
         while (list.size() > 1){
-            System.out.println(list.head.value);
-            SimpleLinkedListNode curr = head;
             for (int i = 1; i <= k; i++) {
+                curr = curr.next;
                 if (i == k) {
                     list.remove(getIndex((Integer) curr.value, list));
                 }
-                curr = curr.next;
             }
 
             for (int i = 0; i < list.size(); i++) {
                 System.out.print((i > 0 ? ", " : "") + list.get(i));
             }
             System.out.println();
-            temp = curr;
         }
-
-        assert temp != null;
-        return (int) temp.value;
+        return (int) curr.next.value;
     }
 
     //получение индекса по значению
